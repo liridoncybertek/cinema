@@ -17,6 +17,7 @@ public class User extends Model<Integer> {
 
     @Email
     @NotNull
+    @Column(unique = true)
     private String email;
 
     @NotNull
@@ -24,6 +25,7 @@ public class User extends Model<Integer> {
     private String password;
 
     @NotNull
+    @Column(unique = true)
     private String username;
 
     @OneToOne(cascade = CascadeType.ALL)

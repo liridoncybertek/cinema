@@ -1,6 +1,7 @@
 package com.cybertek.orm.cinemaapp.model;
 
 import com.cybertek.orm.cinemaapp.model.enums.UserRole;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -29,6 +30,7 @@ public class AccountDetails extends Model<Integer> {
     private UserRole role = UserRole.USER;
 
     @OneToOne(mappedBy = "accountDetails")
+    @JsonIgnore
     private User user;
 
 }
